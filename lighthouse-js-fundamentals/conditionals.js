@@ -1,3 +1,7 @@
-if (temperature < -40 || temperature > 40) {
-  console.log("Maybe going outside isn't such a great idea…");
+const chorus = "Let's dance!";
+let repeat = 0;
+while (repeat < 10) {
+  console.log(chorus);
+  repeat++;
 }
+console.log("Until the sun comes up!");
