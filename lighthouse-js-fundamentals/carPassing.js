@@ -32,7 +32,7 @@ speed: 38
 }
 ];
 function carPassing(cars, speed) {
-    let newCarList = [...cars];
+    let newCarList = [cars];
     if(cars && cars.length && speed){
         newCarList.push({
             time: Date.now(),
