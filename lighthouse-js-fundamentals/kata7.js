@@ -1,14 +1,14 @@
 let checkAir = function (samples, threshold) {
     let dirtyCount = 0;
-for (let i = 0; i < samples[i].Length; i++) {
+for (let i = 0; i < samples.length; i++) {
     if(samples[i] === 'dirty') {
       dirtyCount ++;
     }
 }
-if(threshold > dirtyCount/ samples.Length) {
-    return 'Clean';
-} else {
+if(threshold < (dirtyCount)/(samples.length)) {
     return 'Polluted';
+} else {
+    return 'Clean';
 }
 };
 

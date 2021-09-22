@@ -1,17 +1,17 @@
 const chooseRecipe = function(bakeryA, bakeryB, recipes) {
-  let allIngredients = [bakeryA, bakeryB]
-  let validRecipe = ''
+  let allIngredients = [bakeryA, bakeryB];
+  let validRecipe = '';
   recipes.forEach(function(recipe) {
-      for (let i = 0; i < recipe.ingredients.Length; i++) {
-          let firstIngredient = recipe.ingredients[i]
-          let secondIngredient = recipe.ingredients[i+1]
+      for (let i = 0; i < recipes.ingredients.length; i++) {
+          let firstIngredient = recipes.ingredients[i];
+          let secondIngredient = recipes.ingredients[i+1];
           if(allIngredients.includes(firstIngredient) && allIngredients.includes(secondIngredient)) {
-            validRecipe = recipe.name      
+            validRecipe = recipes.name ;     
   }  
       }
   });
-  return validRecipe
-}
+  return validRecipe;
+};
 
 let bakeryA = ['saffron', 'eggs', 'tomato paste', 'coconut', 'custard'];
 let bakeryB = ['milk', 'butter', 'cream cheese'];
@@ -28,9 +28,9 @@ let recipes = [
         name: 'Custard Surprise',
         ingredients: ['custard', 'ground beef']
     }
-]
+];
 
-console.log(chooseRecipe(bakeryA, bakeryB, recipes))
+console.log(chooseRecipe(bakeryA, bakeryB, recipes));
 
 bakeryA = ['potatoes', 'bay leaf', 'raisins'];
 bakeryB = ['red bean', 'dijon mustard', 'apples'];
@@ -49,4 +49,4 @@ recipes = [
     }
 ];
 
-console.log(chooseRecipe(bakeryA, bakeryB, recipes))
+console.log(chooseRecipe(bakeryA, bakeryB, recipes));
