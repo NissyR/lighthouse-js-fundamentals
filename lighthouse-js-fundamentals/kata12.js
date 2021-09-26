@@ -1,17 +1,19 @@
-const chooseRecipe = function(bakeryA, bakeryB, recipes) {
-  let allIngredients = [bakeryA, bakeryB];
-  let validRecipe = '';
-  recipes.forEach(function(recipe) {
-      for (let i = 0; i < recipes.ingredients.length; i++) {
-          let firstIngredient = recipes.ingredients[i];
-          let secondIngredient = recipes.ingredients[i+1];
-          if(allIngredients.includes(firstIngredient) && allIngredients.includes(secondIngredient)) {
-            validRecipe = recipes.name ;     
-  }  
-      }
-  });
-  return validRecipe;
-};
+const chooseRecipe = (_bakeryA, _bakeryB, _recipes) => {
+    const allIngredients = [..._bakeryA, ..._bakeryB]
+    let validRecipe = ''
+    _recipes.forEach(recipe => {
+        for (let i = 0; i < recipe.ingredients.length; i++) {
+            let firstIngredient = recipe.ingredients[i]
+            let secondIngredient = recipe.ingredients[i+1]
+            if (allIngredients.includes(firstIngredient) && allIngredients.includes(secondIngredient)) {
+                validRecipe = recipe.name
+            }
+        }
+    });
+
+    return validRecipe
+}
+
 
 let bakeryA = ['saffron', 'eggs', 'tomato paste', 'coconut', 'custard'];
 let bakeryB = ['milk', 'butter', 'cream cheese'];
